@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div style="text-align:center">
+     <h1>New Task</h1>
+     <form action="" method="post">{% csrf_token %}
+     {{ form.as_p }}
+     <button class="btn btn-success ml- " type="submit">Save</button>
+     </form>
+</div>     
+{% endblock content %}

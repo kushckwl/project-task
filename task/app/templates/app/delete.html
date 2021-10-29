@@ -1,0 +1,10 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div style="text-align:center">
+    <h1>Delete</h1>
+    <form action="" method="post">{% csrf_token %}
+       <p>Are you sure you want to delete "{{ project.name }}"?</p>
+       <button class="btn btn-danger ml- " type="submit">Confirm</button>
+    </form>
+</div>    
+{% endblock content %}

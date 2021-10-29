@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  {% for project in object_list %}
+     <div style="padding-left: 50px;" class="col-sm-8">
+          <div class="card">
+              <img style="height:300px; width:100%;" src=" {{ project.image.url }} " class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">{{project.name}}</h5>
+                  <p class="card-text">{{project.description}}</p>
+                  <p class="card-text">{{project.duration}}</p>
+                  <a href="{% url 'create' %}" class="btn btn-primary">Create new project</a>
+                  <a href="{% url 'update' project.id %}" class="btn btn-primary">Edit</a>
+                  <a href="{% url 'delete' project.id %}" class="btn btn-primary">Delete</a>
+               </div>
+            </div>
+     </div>    
+     
+   {%endfor%}  
+{% endblock %}   
