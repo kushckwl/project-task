@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Project, Task
 from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
+from .forms import ProjectCreateForm
 
 # Create your views here.
 class Home(ListView):
@@ -10,10 +11,9 @@ class Home(ListView):
 class Create(CreateView):
     model = Project   
     template_name = 'app/create.html'
-    fields = ('name','description','duration','image') 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+    form_class = ProjectCreateForm
+    success_url = '/'
+    
 
 class Detail(DetailView):
     model = Project 
