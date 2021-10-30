@@ -5,7 +5,7 @@ class Project(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
     duration = models.DurationField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to='img/')
 
     def __str__(self):
         return self.name
