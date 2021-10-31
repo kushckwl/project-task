@@ -10,9 +10,9 @@
                   <p class="card-text">{{task.description}}</p>
                   <p class="card-text">{{task.start_date}}</p>
                   <p class="card-text">{{task.end_date}}</p>
-                  <a href="{% url 'create' %}" class="btn btn-primary">Create new project</a>
-                  <a href="{% url 'update' project.id %}" class="btn btn-primary">Edit</a>
-                  <a href="{% url 'delete' project.id %}" class="btn btn-primary">Delete</a>
+                  <a href="{% url 'task_create' %}" class="btn btn-primary">Create new project</a>
+                  <a href="{% url 'task_update' task.id %}" class="btn btn-primary">Edit</a>
+                  <a href="{% url 'task_delete' task.id %}" class="btn btn-primary">Delete</a>
                </div>
             </div>
      </div>    

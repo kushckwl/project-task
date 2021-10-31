@@ -14,9 +14,8 @@ class Create(CreateView):
     form_class = ProjectCreateForm
     success_url = '/'
     
+    
 
-class Detail(DetailView):
-    model = Project 
 
 
 class Update(UpdateView):
@@ -31,25 +30,26 @@ class Delete(DeleteView):
     template_name = 'app/delete.html'
     success_url = '/'
 
-class TaskHome(ListView):
+class Home(ListView):
     model = Task
     template_name = 'app/Task_list.html'
 
-class TaskCreate(CreateView):
+class Create(CreateView):
     model = Task   
     template_name = 'app/task_create.html'
     fields = ('name','description','start_date','end_date') 
-    success_url = '/'
+    pk_url_kwarg = 'task_id'
+    success_url = '<int:project_id>/task/'
     
                 
 
-class TaskUpdate(UpdateView):
+class Update(UpdateView):
     model = Task
     template_name = 'app/Task_create.html'
     fields = ('name','description','start_date','end_date')
     success_url = '/'
 
-class TaskDelete(DeleteView):
+class Delete(DeleteView):
     model = Task
     template_name = 'app/Task_delete.html'
     success_url = '/'
